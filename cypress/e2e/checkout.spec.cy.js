@@ -6,6 +6,7 @@ const produtos = require('../fixtures/produtos.json')
 describe('fluxo de checkout', () => {
     beforeEach(() => {
         cy.loginAula(dados[1].user, dados[1].password)
+        cy.emptyCart()
     });
    
     it('deve adicionar produtos no carrinho e finalizar uma compra', () => {
