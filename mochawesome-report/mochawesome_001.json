@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-15T00:45:31.514Z",
+    "end": "2023-11-15T00:46:32.731Z",
+    "duration": 61217,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "aba7d693-199e-49a2-ab35-3c99f9170093",
+      "title": "",
+      "fullFile": "cypress/e2e/criacao-de-conta.spec.cy.js",
+      "file": "cypress/e2e/criacao-de-conta.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "592b1b29-67d0-4fa6-8f0f-f91698b068e6",
+          "title": "fluxo de criacao de conta",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "deve registrar uma conta com sucesso",
+              "fullTitle": "fluxo de criacao de conta deve registrar uma conta com sucesso",
+              "timedOut": null,
+              "duration": 60981,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.register(faker.internet.email(), faker.internet.password());\ndashboardPage.message.should('contain', 'Welcome');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `fluxo de criacao de conta`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `fluxo de criacao de conta`\n    at timedOutWaitingForPageLoad (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:130344:64)\n    at <unknown> (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:131332:16)\n    at tryCatcher (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://automacao-ui-com-cypress/./cypress/e2e/criacao-de-conta.spec.cy.js:8:7)",
+                "diff": null
+              },
+              "uuid": "d9d25a45-3f29-4a78-ab40-53a093999f8a",
+              "parentUUID": "592b1b29-67d0-4fa6-8f0f-f91698b068e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deve validar mensagem de email invalido",
+              "fullTitle": "fluxo de criacao de conta deve validar mensagem de email invalido",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.register(dados[0].user, faker.internet.password());\ndashboardPage.errormessage.should('contain', 'Erro: Informe um endereço de e-mail válido.');",
+              "err": {},
+              "uuid": "9f337978-58d8-4315-9e34-847bf7c5f4b9",
+              "parentUUID": "592b1b29-67d0-4fa6-8f0f-f91698b068e6",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "deve validar mensagem de email ja em uso",
+              "fullTitle": "fluxo de criacao de conta deve validar mensagem de email ja em uso",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user = faker.internet.email();\nlet password = faker.internet.password();\nregisterPage.register(user, password);\ndashboardPage.logout.click();\ncy.visit('/minha-conta');\nregisterPage.register(user, password);\ndashboardPage.errormessage.should('contain', 'Erro: Uma conta já está registrada com seu endereço de e-mail.');",
+              "err": {},
+              "uuid": "f3e02a11-3ef5-44cb-9cce-46e84616153a",
+              "parentUUID": "592b1b29-67d0-4fa6-8f0f-f91698b068e6",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d9d25a45-3f29-4a78-ab40-53a093999f8a"
+          ],
+          "pending": [],
+          "skipped": [
+            "9f337978-58d8-4315-9e34-847bf7c5f4b9",
+            "f3e02a11-3ef5-44cb-9cce-46e84616153a"
+          ],
+          "duration": 60981,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

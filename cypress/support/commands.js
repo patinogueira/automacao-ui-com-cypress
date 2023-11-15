@@ -75,3 +75,8 @@ Cypress.Commands.add('emptyCart', () => {
       }
     });
   });
+
+  Cypress.Commands.add('emptyCartAfter', () => {
+    cy.get('#cart > .dropdown-toggle').click();
+    cy.get('.pull-right.top-cart.hidden-xs a.remove').should('exist').click();
+  });

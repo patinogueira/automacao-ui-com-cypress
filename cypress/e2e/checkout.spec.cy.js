@@ -16,4 +16,8 @@ describe('fluxo de checkout', () => {
         cy.cadastroFaturamentoCheckout(dados[1].cep, dados[1].telefone)
         cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
     });
+    after(() => {
+        cy.emptyCartAfter()
+        
+    });
 });

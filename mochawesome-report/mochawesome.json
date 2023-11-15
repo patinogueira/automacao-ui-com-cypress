@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-15T00:44:10.425Z",
+    "end": "2023-11-15T00:45:07.516Z",
+    "duration": 57091,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7f4ca65f-297b-4a69-b550-8b00dc895fbe",
+      "title": "",
+      "fullFile": "cypress/e2e/checkout.spec.cy.js",
+      "file": "cypress/e2e/checkout.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a8ccc5f-9609-4de7-9aee-d99afb1b55ff",
+          "title": "fluxo de checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "deve adicionar produtos no carrinho e finalizar uma compra",
+              "fullTitle": "fluxo de checkout deve adicionar produtos no carrinho e finalizar uma compra",
+              "timedOut": null,
+              "duration": 6151,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.AddProduto(produtos.tamanho, produtos.cor, produtos.quantidade, produtos.id, produtos.varid);\ncy.get('.dropdown-toggle > .mini-cart-items', {\n  timeout: 100000\n}).should('contain', 2);\ncy.cadastroFaturamentoCheckout(dados[1].cep, dados[1].telefone);\ncy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<a href=\"http://lojaebac.ebaconline.art.br/carrinho/?remove_item=d7598884f944f16d9f7b641f7636d2d5&amp;_wpnonce=b44e622351\" class=\"remove\" aria-label=\"Remove this item\" data-product_id=\"2559\" data-product_sku=\"MH09-M-Green\" data-cart_item_key=\"d7598884f944f16d9f7b641f7636d2d5\">×</a>`\n\nThis element `<a.remove>` is not visible because its parent `<div.product-details>` has CSS property: `visibility: hidden`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `after all` hook we are skipping the remaining tests in the current suite: `fluxo de checkout`",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<a href=\"http://lojaebac.ebaconline.art.br/carrinho/?remove_item=d7598884f944f16d9f7b641f7636d2d5&amp;_wpnonce=b44e622351\" class=\"remove\" aria-label=\"Remove this item\" data-product_id=\"2559\" data-product_sku=\"MH09-M-Green\" data-cart_item_key=\"d7598884f944f16d9f7b641f7636d2d5\">×</a>`\n\nThis element `<a.remove>` is not visible because its parent `<div.product-details>` has CSS property: `visibility: hidden`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `after all` hook we are skipping the remaining tests in the current suite: `fluxo de checkout`\n    at runVisibilityCheck (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:145429:58)\n    at Object.isStrictlyVisible (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:145443:10)\n    at runAllChecks (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:112245:26)\n    at retryActionability (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:112313:16)\n    at tryCatcher (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:144246:68)\n    at <unknown> (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:144187:14)\n    at tryCatcher (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (http://lojaebac.ebaconline.art.br/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at Context.eval (webpack://automacao-ui-com-cypress/./cypress/support/commands.js:81:70)",
+                "diff": null
+              },
+              "uuid": "69ddff7d-07d0-4707-874c-6d4fd22c557d",
+              "parentUUID": "6a8ccc5f-9609-4de7-9aee-d99afb1b55ff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "69ddff7d-07d0-4707-874c-6d4fd22c557d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
